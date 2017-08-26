@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS 실습</title>
+</head>
+<body>
+<p id="today"></p>
+<script>
+var today = new Date();  // Date 객체 생성 (현재 일자)
+var day = today.getDay(); // 0:일, 1:월, 2:화, 3:수, 4:목, 5:금, 6:토
+var days = ["월","화","수","목","금","토","일"];
+document.getElementById("today").innerHTML = 
+		today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + " " +
+		days[today.getDay()] + "요일입니다.";
+</script>
+</body>
+</html>

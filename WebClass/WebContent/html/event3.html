@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS 실습</title>
+    <style>
+	  .bgColor1 { background-color: yellow; }
+	  .bgColor2 { background-color: blue; }
+	  .bgColor3 { background-color: white; }
+	  .border { border: 3px solid red }
+	</style>
+    <script>
+    function changeColor(bgClass) {
+    	var c = document.getElementById("container");
+        //c.style.backgroundColor = color;
+        c.setAttribute("class", bgClass);
+    }
+    
+    function toUpperCase(e) {
+        //var w = document.getElementById("word");
+        e.value = e.value.toUpperCase();  // 대문자 변환 함수
+    }
+
+    function addBorder(e) {
+        //var x = document.getElementById("box");
+        //e.style.border = "3px solid red";
+        e.setAttribute("class", "border");
+    }
+
+    function removeBorder(e) {
+        //var x = document.getElementById("box");
+        //e.style.border = "";
+        e.removeAttribute("class");
+    }
+    </script>
+</head>
+<body onload="alert('웹 페이지 로딩');">
+<div id="container">
+<input type="radio" name="color" onclick="changeColor('bgColor1')">노랑색
+<input type="radio" name="color" onclick="changeColor('bgColor2')">파란색
+<input type="radio" name="color" onclick="changeColor('bgColor3')">원래대로
+<br/><br/>
+<input type="text" id="word" onchange="toUpperCase(this)">
+<br/><br/>
+<div id="box" onmouseover="addBorder(this)" onmouseout="removeBorder(this)">
+마우스를 위에 올려놓으세요</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Who am I</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+    body {
+      padding-top: 70px;
+    }
+    </style>
+
+    <script>
+    function fnc_mouse_over(elem) {
+      elem.setAttribute("class", "active");
+    }
+
+    function fnc_mouse_out(elem) {
+      elem.removeAttribute("class");
+    }
+    </script>    
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="hello.html">My Blog</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="whoami.html">Who am I</a></li>
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="interest.html">Interest</a></li>
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="dream.html">Dream</a></li>
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="etc.html">Etc</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Who am I?</h1>
+        <p class="lead blog-description">나는 어디에서 왔고, 또 어디로 가는가?</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">컴퓨터 공학 전공자</h2>
+            <p>컴퓨터가 뭔지도 잘 모르던 시절에 <strong>앞으로 컴퓨터가 비전이 있다더라</strong>던 말에 속아^^;; 컴퓨터 공학을 전공한 Natural born 이과출신 컴퓨터 공학 전공자이다.</p>
+            <p>가끔씩 내가 컴공을 전공하지 않았으면 지금 뭘 하고 있을까? 생각을 해보면..  음..
+            농부? 경찰관? (고등학교 적성검사에서 나온 1, 2위임) 에잇!! 컴퓨터하길 잘 했네.. 
+            <hr>
+
+            <blockquote>
+              <p>인생의 초반에는 자신이 하고 싶은 일을 열심히 찾고, 중반에는 자신이 할 수 있는 일을 찾고, 인생의 후반에는 자신이 해야만 하는 일을 찾는다. <strong>인생의 후반까지 하고 싶은 일을 찾는 사람이 되지 않으려면 인생의 초반에 충분히 많은 생각과 경험을 해야 한다. 그리고 그러한 시간은 절대 낭비가 아니다.</strong></p>
+            </blockquote>            
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">소프트웨어 엔지니어</h2>
+            <p>나의 첫 직장은 은행의 전산실에서 시작되었다. 은행을 들어간 이유는 <strong>은행이 안정적이고 연봉도 쎄더라</strong>던 말에 혹해서 들어가게 되었는데, 1년만에 그 안정적인 분위기가 적성에 안맞아서 나오게 되었다. </p>
+            <p>지금은 자다가도 연봉만 생각하면 내가 그 때 왜 나왔을까 하는 생각도 들지만 ^^;; 한창 피 끓던 나이에는 하루 종일 자리에 앉아서 전화응대하고 시스템 유지보수하는 일이 지루하게만 느껴졌다.</p>
+            <hr>
+
+            <blockquote>
+              <p>연봉, 안정된 미래 다 좋지만 무엇보다 제일 중요한 것은 일에 대한 적성인 것 같다. (물론, 개인적인 의견임) 내가 좋아하는 일을 즐기면서 할 수 있다면 그 얼마나 행복한 일이겠는가?</p>
+            </blockquote>            
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">꿈꾸는 선생님</h2>
+            <p>가끔씩 내 자신이 선생님이라는 것이 어색할 때도 있지만, 학생들과 같은 공간에서 같이 공부하고 생활하고 있는 것이 행복하다. 내가 있는 자리에 안주하지 않고 항상 노력하며 꿈을 잃지 않는 선생님이 되고 싶다.</p>
+
+            <pre>
+            <code>
+            var jobs = ["banker", "engineer", "teacher"];
+            var now = jobs[2];
+            alert("I'm a " + now);
+            </code>
+            </pre>
+          </div><!-- /.blog-post -->          
+
+        </div><!-- /.blog-main -->       
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </body>
+</html>

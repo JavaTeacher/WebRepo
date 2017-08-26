@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Etc</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <style>
+    body {
+      padding-top: 70px;
+    }
+    </style>
+
+    <script>
+    function fnc_mouse_over(elem) {
+      elem.setAttribute("class", "active");
+    }
+
+    function fnc_mouse_out(elem) {
+      elem.removeAttribute("class");
+    }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="hello.html">My Blog</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="whoami.html">Who am I</a></li>
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="interest.html">Interest</a></li>
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="dream.html">Dream</a></li>
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="etc.html">Etc</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">감동 노래 모음</h1>
+        <p class="lead blog-description">아름다운 노래를 들으며 감동의 도가니 속으로 빠져봅시다!</p>
+      </div>      
+
+      <p>
+      <iframe src='http://serviceapi.rmcnmv.naver.com/flash/outKeyPlayer.nhn?vid=08A88E31B03738270D3BB1ED36CA1DA11E73&outKey=V128aabaab3204cc6bdd908ba95d58f5a04afc9c2a08e78d7a8eb08ba95d58f5a04af&controlBarMovable=true&jsCallable=true&skinName=tvcast_white' frameborder='no' scrolling='no' marginwidth='0' marginheight='0' allowfullscreen WIDTH='544' HEIGHT='306' style='width:544px; height:306px;'></iframe>
+      </p>
+
+      <p>
+      <iframe width="544" height="306" src="https://www.youtube.com/embed/4nSJu6fSQRI" frameborder="0" allowfullscreen></iframe>
+      </p>
+
+      <p>
+      <iframe width="544" height="306" src="https://www.youtube.com/embed/BoThbf5Msts" frameborder="0" allowfullscreen></iframe>
+      </p>
+      
+    </div><!-- /.container -->
+    
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  </body>
+</html>

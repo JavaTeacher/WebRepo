@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS 실습</title>
+    <script>
+    function changeColor(color) {
+    	var c = document.getElementById("container");
+        c.style.backgroundColor = color;
+    }
+    
+    function toUpperCase(e) {
+        //var w = document.getElementById("word");
+        e.value = e.value.toUpperCase();  // 대문자 변환 함수
+    }
+
+    function addBorder(e) {
+        //var x = document.getElementById("box");
+        e.style.border = "3px solid red";
+    }
+
+    function removeBorder(e) {
+        //var x = document.getElementById("box");
+        e.style.border = "";
+    }
+    </script>
+</head>
+<body onload="alert('웹 페이지 로딩');">
+<div id="container">
+<input type="radio" name="color" onclick="changeColor('yellow')">노랑색
+<input type="radio" name="color" onclick="changeColor('blue')">파란색
+<input type="radio" name="color" onclick="changeColor('white')">원래대로
+<br/><br/>
+<input type="text" id="word" onchange="toUpperCase(this)">
+<br/><br/>
+<div id="box" onmouseover="addBorder(this)" onmouseout="removeBorder(this)">
+마우스를 위에 올려놓으세요</div>
+</div>
+</body>
+</html>

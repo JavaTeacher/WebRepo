@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Interest</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <style>
+    body {
+      padding-top: 70px;
+    }
+    </style>
+
+    <script>
+    function fnc_mouse_over(elem) {
+      elem.setAttribute("class", "active");
+    }
+
+    function fnc_mouse_out(elem) {
+      elem.removeAttribute("class");
+    }
+    </script>    
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="hello.html">My Blog</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="whoami.html">Who am I</a></li>
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="interest.html">Interest</a></li>
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="dream.html">Dream</a></li>
+            <li onmouseover="fnc_mouse_over(this)" onmouseout="fnc_mouse_out(this)"><a href="etc.html">Etc</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">What am I interested in?</h1>
+        <p class="lead blog-description">이걸 할 때는 돈도 시간도 안 아깝다!!</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Traveling</h2>
+            
+            <div class="row">
+              <div class="col-md-4">
+                <a href="../image/jeju.jpg" class="thumbnail">
+                  <p>제주도: 또 걷고 싶은 제주 올레길</p> 
+                  <img src="../image/jeju.jpg" alt="제주올레" style="width:150px;height:150px">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="../image/kenya.jpg" class="thumbnail">
+                  <p>케냐: 마사이마라 국립공원</p>
+                  <img src="../image/kenya.jpg" alt="케냐" style="width:150px;height:150px">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="../image/ankorwat.jpg" class="thumbnail">
+                  <p>캄보디아: 신의 작품 앙코르와트</p> 
+                  <img src="../image/ankorwat.jpg" alt="앙코르와트" style="width:150px;height:150px">
+                </a>
+              </div>
+            </div>
+
+          </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Movies</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="../image/starwars.jpg" class="thumbnail">
+                  <p>스타워즈: May the Force be with you</p> 
+                  <img src="../image/starwars.jpg" alt="스타워즈" style="width:150px;height:150px">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="../image/terminator.jpg" class="thumbnail">
+                  <p>터미네이터: I'll be back</p>
+                  <img src="../image/terminator.jpg" alt="터미네이터" style="width:150px;height:150px">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="../image/august.jpg" class="thumbnail">
+                  <p>어거스트 러쉬: 멋진 음악 영화</p> 
+                  <img src="../image/august.jpg" alt="어거스트러쉬" style="width:150px;height:150px">
+                </a>
+              </div>
+            </div>            
+          </div><!-- /.blog-post -->          
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Etc</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="../image/puzzle.jpg" class="thumbnail">
+                  <p>직소퍼즐: 인내과 끈기의 결정판</p> 
+                  <img src="../image/puzzle.jpg" alt="직소퍼즐" style="width:150px;height:150px">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="../image/gundam.jpg" class="thumbnail">
+                  <p>프라모델: 건담 최고</p>
+                  <img src="../image/gundam.jpg" alt="프라모델" style="width:150px;height:150px">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="../image/workout.jpg" class="thumbnail">
+                  <p>운동: 나의 힘의 원천</p>
+                  <img src="../image/workout.jpg" alt="운동" style="width:150px;height:150px">
+                </a> 
+              </div>
+            </div>            
+          </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->       
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  </body>
+</html>
