@@ -1,11 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<!-- The viewport : the user's visible area of a web page.
-The viewport varies with the device, and will be smaller on a mobile phone than on a computer screen. -->
-<!-- The width=device-width : set the width of the page to follow the screen-width of the device (which will vary depending on the device). -->
-<!-- The initial-scale=1.0 : set the initial zoom level when the page is first loaded by the browser. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Bootstrap 실습</title>
 <!-- Bootstrap css -->
@@ -16,14 +14,7 @@ div.container {
   padding-bottom: 20px;
 }
 </style>
-<script>
-function menu_over(elem) {
-	elem.setAttribute("class", "nav-item active");
-}
-function menu_out(elem) {
-	elem.setAttribute("class", "nav-item");
-}
-</script> 
+<link rel="stylesheet" href="/WebClass/css/footer.css">
 </head>
 <body>
 <!-- navbar-dark bg-dark -->
@@ -34,60 +25,36 @@ function menu_out(elem) {
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" onmouseover="menu_over(this)" onmouseout="menu_out(this)">
-        <a class="nav-link" href="a.html">메뉴1 <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" onmouseover="menu_over(this)" onmouseout="menu_out(this)">
-        <a class="nav-link" href="bookmark.html">메뉴2</a>
-      </li>
-      <li class="nav-item" onmouseover="menu_over(this)" onmouseout="menu_out(this)">
-        <a class="nav-link" href="check.html">메뉴3</a>
-      </li>
-    </ul>
+  	<%@ include file="menu.jsp" %>
+  	
+    <div id="loginDiv">
     <form class="form-inline my-2 my-lg-0" id="loginForm">
       <input class="form-control mr-sm-2" type="text" placeholder="ID" aria-label="ID" id="id" required >
       <input class="form-control mr-sm-2" type="password" placeholder="PWD" aria-label="PWD" id="pwd" required >
+
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="login">Login</button>&nbsp;
       <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="join" data-toggle="modal" data-target="#joinModal">Join</button>
     </form>
+    </div>
+    <div id="logoutDiv">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="logout">Logout</button>
+    </div>
   </div>
 </nav>
 <div class="container">
-<form action="http://127.0.0.1:8080/WebClass/login" method="get">
-<input type="text" name="id" id="id" value="홍길동1">
-<input type="password" name="pwd" id="pwd" value="가나다1">
-<button type="submit">버튼</button>
-</form>
 <h1>Hello, Bootstrap</h1>
 <p>
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
 </p>
 </div>
 
-<div class="modal" id="myModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+<%@ include file="modal.jsp" %>
+<%@ include file="footer.jsp" %>
 	
 <!-- Bootstrap js -->
 <!-- slim 버전에는 ajax를 포함하지 않음 -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<!-- 
+<!--  
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
@@ -95,6 +62,14 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 
 <script>
 $(document).ready(function() {
+	<% String id = (String)request.getSession().getAttribute("id"); %>
+	<% if(id == null) { %>
+		$('#loginDiv').show();	
+		$('#logoutDiv').hide();		
+	<% } else { %>
+		$('#logoutDiv').show();	
+		$('#loginDiv').hide();
+	<% } %>
 	$('#loginForm').submit(function (event) {
 		// Stop form from submitting normally
 		event.preventDefault();
@@ -103,32 +78,36 @@ $(document).ready(function() {
 		var id = $("#id").val();
 		var pwd = $("#pwd").val();
 		console.log(id, pwd);
-
-		// 서버로 post 전송
-		/*$.post("http://httpbin.org/post", 
-				{ id: id, pwd: pwd },
-				function(data) {
-					//console.log(data.form.id, data.form.pwd);
-				  	//alert(data.form.id + '님 로그인되었습니다');
-				  	var myModal = $('#myModal');
-				  	myModal.modal('show');
-				  	myModal.find('.modal-title').text('로그인 결과');
-				  	console.log(data.form.id + '님 로그인되었습니다');
-				    myModal.find('.modal-body').text(data.form.id + '님 로그인되었습니다.');
-			    });*/
 		
 		$.post("/WebClass/login", 
 				{ "id": id, "pwd": pwd },
 				function(data) {
-					console.log("data:" + data);
-					console.log("id:" + data.id);
-				  	//alert(data.form.id + '님 로그인되었습니다');
-				  	var myModal = $('#myModal');
-				  	myModal.modal('show');
-				  	myModal.find('.modal-title').text('로그인 결과');
-				  	console.log(data.id + '님 로그인되었습니다');
-				    myModal.find('.modal-body').text(data.id + '님 로그인되었습니다.');
+					console.log("msg:" + data.msg);
+					$('#loginForm')[0].reset();
+				  	if(data.msg == "error") {		  		
+					  	var myModal = $('#myModal');
+					  	myModal.modal('show');
+					  	myModal.find('.modal-title').text('Login Error');
+					  	//console.log(data.id + '님 로그인되었습니다');
+					    myModal.find('.modal-body').text('Invalid username or password');
+				  	} else if(data.msg == "success") {
+				  		$('#loginDiv').hide();
+				  		$('#logoutDiv').show();
+				  		location.reload();
+				  	}
 			    });
+	});	
+	
+	$('#logout').click(function () {
+		$.post("/WebClass/logout", 
+				function(data) {
+					console.log("msg2:" + data.msg);
+					if(data.msg == "success") {
+						$('#loginDiv').show();
+						$('#logoutDiv').hide();
+						location.reload();
+					}
+		});
 	});	
 });
 

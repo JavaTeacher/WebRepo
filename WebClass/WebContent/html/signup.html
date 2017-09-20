@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap 실습</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+<form method="post" id="signupForm" action="/WebClass/signup">
+<div class="form-group">
+	<input type="radio" name="grade" value="1" checked> 1학년
+	<input type="radio" name="grade" value="2"> 2학년
+	<input type="radio" name="grade" value="3"> 3학년
+</div>
+<div class="form-group">
+	<select name="ban" id="ban" required>
+	  <option value="">- 반 선택 -</option>
+	  <option value="1">1</option>
+	  <option value="2">2</option>
+	  <option value="3">3</option>
+	  <option value="4">4</option>
+	  <option value="5">5</option>
+	  <option value="6">6</option>
+	</select>
+</div>
+<div class="form-group">
+	<input type="text" name="num" id="num" placeholder="번호" required>
+</div>
+<div class="form-group">
+	<input type="text" name="name" id="name" placeholder="이름" required>
+</div>
+<button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap js -->
+<!-- slim 버전에는 ajax를 포함하지 않음 -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<script>
+/*$(document).ready(function() {
+	$('#signupForm').submit(function (event) {
+		// Stop form from submitting normally
+		event.preventDefault();
+		
+		var grade = $('input:radio[name="grade"]:checked').val();
+		var ban = $("#ban").val();
+		var num = $('#num').val();
+		var name = $('#name').val();
+		console.log(grade, ban, num, name);
+
+		// 서버로 post 전송		
+		$.post("/WebClass/signup",
+				{ "grade": grade, 
+				  "ban": ban, 
+				  "num": num,
+				  "name": name
+				},
+				function(data) {
+					console.log(data.name);
+				  	var myModal = $('#myModal');
+				  	myModal.modal();
+				  	myModal.find('.modal-title').text('회원가입 결과');
+				  	myModal.find('.modal-body').text(data.name + '님 회원가입되었습니다.');
+			    });
+	});	
+});*/
+
+//간단하게 쓰기
+$(function() {
+
+});
+</script>
+</body>
+</html>
