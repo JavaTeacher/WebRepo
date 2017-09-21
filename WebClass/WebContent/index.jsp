@@ -10,7 +10,7 @@
 <body>
 <%-- 2. JSP 주석 tag --%>
 <%-- 3. 선언부 tag : 멤버 변수나 메소드를 정의할 때 사용 --%>
-<%! private static final String DEFAULT_NAME = "Guest"; %>
+<%! private static final String DEFAULT_NAME = "New Guest"; %>
 <%-- 4. 스크립틀릿 tag --%>
 <%
 	// 자바 코드를 그대로 작성
