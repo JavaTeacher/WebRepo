@@ -38,10 +38,11 @@ function menu_out(e) {
   	<%@ include file="menu.jsp" %>
   	
     <% 
-    	HttpSession sess = request.getSession();
-    	UserVO user = (UserVO) sess.getAttribute("user");    	
+    	UserVO user = (UserVO) session.getAttribute("user");    	
     	if(user == null) { %>
     	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/login">Sign in</a>
+    	<span class="text-bold text-white">&nbsp; or &nbsp;</span>
+    	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/join">Sign up</a>
     <% } else { %>
 	    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
 	    <li class="nav-item dropdown">

@@ -10,8 +10,7 @@
 </head>
 <body>
 <%
-	HttpSession sess = request.getSession();
-	UserVO vo = (UserVO) sess.getAttribute("user");
+	UserVO vo = (UserVO) session.getAttribute("user");
 %>
 <h1>id : <%= vo.getId() %></h1>
 <h1>name : <%= vo.getName() %></h1>
