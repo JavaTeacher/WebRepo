@@ -1,9 +1,6 @@
 package org.dimigo.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,9 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 /**
  * Servlet implementation class LoginServlet
@@ -42,19 +36,14 @@ public class LogoutServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 세션 삭제
 		HttpSession session = request.getSession();
-    	session.removeAttribute("id");
+    	session.removeAttribute("user");
     	session.invalidate();
     	
-    	response.setContentType("application/json;charset=utf-8");
-    	PrintWriter out = response.getWriter();
-    	
-    	Gson gson = new Gson();
-    	JsonObject obj = new JsonObject();
-		obj.addProperty("msg", "success");
-		System.out.println("result2:" + gson.toJson(obj));
-		out.write(gson.toJson(obj));
-	    out.close();
+    	response.setContentType("text/html;charset=utf-8");
+    	RequestDispatcher rd = request.getRequestDispatcher("jsp/home.jsp");
+	    rd.forward(request, response);
 	}
 
 }

@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class UserServlet
+ * Servlet implementation class SessionServlet
  */
-@WebServlet("/user")
-public class UserServlet extends HttpServlet {
+@WebServlet("/session")
+public class SessionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserServlet() {
+    public SessionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,12 +28,10 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		if(request.getSession().getAttribute("id") == null) {
-			response.sendRedirect("jsp/home.jsp");
+		if(request.getSession().getAttribute("user") == null) {
+			response.sendRedirect("jsp/login.jsp");
 		} else {
-			RequestDispatcher rd = request.getRequestDispatcher("jsp/user.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("jsp/sessionInfo.jsp");
 			rd.forward(request, response);
 		}
 	}
@@ -42,8 +40,7 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }
