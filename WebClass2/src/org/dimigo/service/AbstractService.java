@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.dimigo.dao;
+package org.dimigo.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -23,7 +23,7 @@ import javax.sql.DataSource;
  * @author : teacher
  * @version : 1.0
  */
-public abstract class AbstractDao {
+public abstract class AbstractService {
 
     public Connection getConnection() throws SQLException, NamingException {
     	Context context = new InitialContext();

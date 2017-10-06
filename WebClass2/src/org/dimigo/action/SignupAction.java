@@ -63,7 +63,7 @@ public class SignupAction implements IAction {
 			validate(user);
 			
 			// 비지니스 로직 처리를 위한 Service 호출
-			SignupService service = SignupService.getInstance();
+			SignupService service = new SignupService();
 			service.signup(user);
 			
 		    obj.addProperty("msg", "success");

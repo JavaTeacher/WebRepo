@@ -49,7 +49,7 @@ public class LoginAction implements IAction {
 			user.setPwd(pwd);
 			
 			// 비지니스 로직 처리를 위한 Service 호출
-			LoginService service = LoginService.getInstance();
+			LoginService service = new LoginService();
 			UserVO result = service.login(user);
 			
 			// 세션에 사용자정보 저장

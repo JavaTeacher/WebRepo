@@ -21,24 +21,19 @@ import org.dimigo.vo.UserVO;
  * @author : teacher
  * @version : 1.0
  */
-public class UserDao extends AbstractDao {
-
-	private static UserDao dao = new UserDao();
+public class UserDao {
 	
-	private UserDao() {
-		
-	}
+	private Connection conn = null;
 	
-	public static UserDao getInstance() {
-		return dao;
+	public UserDao(Connection conn) {
+		this.conn = conn;
 	}
 	
 	public UserVO searchUser(UserVO vo) throws Exception {
 		
 		String sql = "SELECT ID, NAME, NICKNAME FROM USER WHERE ID=? AND PWD=?";
 		
-		try (Connection connection = getConnection();
-			 PreparedStatement pstmt = connection.prepareStatement(sql)) {
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			
 			pstmt.setString(1, vo.getId());
 			pstmt.setString(2, vo.getPwd());
@@ -65,8 +60,7 @@ public class UserDao extends AbstractDao {
 		
 		String sql = "SELECT ID, NAME, NICKNAME FROM USER WHERE ID=?";
 		
-		try (Connection connection = getConnection();
-			 PreparedStatement pstmt = connection.prepareStatement(sql)) {
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			
 			pstmt.setString(1, vo.getId());
 			ResultSet rs = pstmt.executeQuery();
@@ -91,8 +85,7 @@ public class UserDao extends AbstractDao {
 		
 		String sql = "INSERT INTO USER VALUES(?, ?, ?, ?)";
 		
-		try (Connection connection = getConnection();
-			 PreparedStatement pstmt = connection.prepareStatement(sql)) {
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			
 			pstmt.setString(1, vo.getId());
 			pstmt.setString(2, vo.getPwd());
