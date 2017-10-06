@@ -12,12 +12,15 @@
 <body>
 <div class="container">
 
+<%
+	String id = request.getParameter("id") == null ? "" : request.getParameter("id");
+%>
   <form class="form-signin" action="/WebClass/login" method="post">
     <h2 class="form-signin-heading">Please sign in</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" name="id" id="inputEmail" value="<%=id%>" class="form-control" placeholder="Email address"  autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
+    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" >
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
@@ -34,7 +37,8 @@
 	<% if("error".equals(request.getAttribute("msg"))) { %>
 		var myModal = $('#myModal');
 		myModal.find('.modal-title').text('Login Error');
-		myModal.find('.modal-body').text('Invalid username or password');
+		//myModal.find('.modal-body').text('Invalid username or password');
+		myModal.find('.modal-body').text('<%= request.getAttribute("detail") %>');
 		myModal.modal();
 	<% } %>
 </script>

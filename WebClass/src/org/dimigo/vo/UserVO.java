@@ -20,6 +20,22 @@ public class UserVO {
 	private String name;
 	private String nickName;
 	
+	// 기본생성자 만들기
+	public UserVO() {
+		
+	}
+	
+	/**
+	 * @param id
+	 * @param name
+	 * @param nickName
+	 */
+	public UserVO(String id, String name, String nickName) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.nickName = nickName;
+	}
 	/**
 	 * @return the id
 	 */

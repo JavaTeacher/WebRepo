@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 /**
  * Servlet implementation class SignUpServlet
@@ -32,33 +33,62 @@ public class SignUpServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestDispatcher rd = request.getRequestDispatcher("jsp2/signup.jsp");
+	    rd.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	@SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		//response.setContentType("application/json;charset=utf-8");
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
+		//response.setContentType("text/html;charset=utf-8");
 	    
-	    String grade = request.getParameter("grade");
-	    String ban = request.getParameter("ban");
-	    String num = request.getParameter("num");
+	    String id = request.getParameter("id");
+	    String pwd = request.getParameter("pwd");
 	    String name = request.getParameter("name");
-	    System.out.printf("grade : %s, ban : %s, num : %s, name : %s\n", grade, ban, num, name);
+	    String nickname = request.getParameter("nickname");
+	    System.out.printf("id : %s, pwd : %s, name : %s, nickname : %s\n", id, pwd, name, nickname);
 	    
-//	    JSONObject json = new JSONObject();
-//	    json.put("name", name);
-//	    System.out.println(json.toJSONString());
-//	    out.write(json.toJSONString());
-//	    out.close();
+	    boolean result = true;
 	    
-	    RequestDispatcher rd = request.getRequestDispatcher("/html/signup.html");
-	    rd.forward(request, response);
+	    if(result) {
+	    	RequestDispatcher rd = request.getRequestDispatcher("jsp2/login.jsp");
+		    rd.forward(request, response);
+	    } else {
+	    	request.setAttribute("msg", "error");
+	    	RequestDispatcher rd = request.getRequestDispatcher("jsp2/signup.jsp");
+		    rd.forward(request, response);
+	    }    
+	    
 	}
 
+	protected void doPost2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("application/json;charset=utf-8");
+		PrintWriter out = response.getWriter();
+	    
+	    String id = request.getParameter("id");
+	    String pwd = request.getParameter("pwd");
+	    String name = request.getParameter("name");
+	    String nickname = request.getParameter("nickname");
+	    System.out.printf("id : %s, pwd : %s, name : %s, nickname : %s\n", id, pwd, name, nickname);
+	    
+	    boolean result = false;
+	    
+	    Gson gson = new Gson();
+		JsonObject obj = new JsonObject();
+		
+	    if(result) {
+	    	obj.addProperty("msg", "success");
+	    } else {
+	    	obj.addProperty("msg", "error");
+	    	//obj.addProperty("detail", Message.getMessage("E0002", id));
+	    }
+	    
+		out.write(gson.toJson(obj));
+		out.close();
+	}
+	
 }

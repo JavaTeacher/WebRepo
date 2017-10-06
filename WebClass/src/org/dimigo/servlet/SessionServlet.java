@@ -29,9 +29,9 @@ public class SessionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getSession().getAttribute("user") == null) {
-			response.sendRedirect("jsp/login.jsp");
+			response.sendRedirect("jsp2/login.jsp");
 		} else {
-			RequestDispatcher rd = request.getRequestDispatcher("jsp/sessionInfo.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("jsp2/sessionInfo.jsp");
 			rd.forward(request, response);
 		}
 	}

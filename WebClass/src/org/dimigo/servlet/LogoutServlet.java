@@ -42,7 +42,7 @@ public class LogoutServlet extends HttpServlet {
     	session.invalidate();
     	
     	response.setContentType("text/html;charset=utf-8");
-    	RequestDispatcher rd = request.getRequestDispatcher("jsp/home.jsp");
+    	RequestDispatcher rd = request.getRequestDispatcher("jsp2/home.jsp");
 	    rd.forward(request, response);
 	}
 
