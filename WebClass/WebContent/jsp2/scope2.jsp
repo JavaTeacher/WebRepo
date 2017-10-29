@@ -7,19 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/WebClass/scope" method="post">
-<input type="text" name="id" value="testid" />
-<input type="hidden" name="pwd" value="testpwd" />
-<button type="submit">전송</button>
-</form>
 <h1>request : ${ key }</h1>
 <h1>session : ${ sessionScope.key }</h1>
 <h1>application : ${ applicationScope.key }</h1>
 <h1>id : ${ param.id }</h1>
 <h1>pwd : ${ param.pwd }</h1>
 <hr>
-<form action="/WebClass/jsp/scope2.jsp" method="post">
-<button type="submit">전송</button>
-</form>
 </body>
 </html>

@@ -28,7 +28,7 @@
 	  		<th>${status.count}</th>
 			<td>${item.id}</td>
 			<td>${item.name}</td>
-			<td>${item.nickName}</td>
+			<td>${item.nickname}</td>
 		</tr>
 	</c:forEach>
   </c:if>

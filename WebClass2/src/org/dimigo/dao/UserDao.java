@@ -6,6 +6,8 @@ package org.dimigo.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.dimigo.vo.UserVO;
 
@@ -98,6 +100,33 @@ public class UserDao {
 		} catch(Exception e) {
 			e.printStackTrace();
 			throw new Exception("사용자 등록 시 오류가 발생하였습니다.");
+		}
+	}
+	
+	public List<UserVO> searchUserList() throws Exception {
+		
+		String sql = "SELECT ID, NAME, NICKNAME FROM USER";
+		
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			UserVO result = null;
+			List<UserVO> list = new ArrayList<UserVO>();
+			
+			while(rs.next()) {
+				result = new UserVO();
+				result.setId(rs.getString(1));
+				result.setName(rs.getString(2));
+				result.setNickname(rs.getString(3));
+				list.add(result);
+			}
+			
+			return list;
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception("사용자 조회 시 오류가 발생하였습니다.");
 		}
 	}
 }

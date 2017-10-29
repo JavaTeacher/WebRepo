@@ -12,10 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.dimigo.action.IAction;
+import org.dimigo.action.ListAction;
 import org.dimigo.action.LoginAction;
 import org.dimigo.action.LogoutAction;
-import org.dimigo.action.OpenLoginAction;
-import org.dimigo.action.OpenSignupAction;
 import org.dimigo.action.SessionAction;
 import org.dimigo.action.SignupAction;
 
@@ -37,12 +36,11 @@ public class ActionServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-    	actions.put("openlogin", new OpenLoginAction());
     	actions.put("login", new LoginAction());
-    	actions.put("logout", new LogoutAction());
-    	actions.put("session", new SessionAction());
-    	actions.put("opensignup", new OpenSignupAction());
+    	actions.put("logout", new LogoutAction());    	
     	actions.put("signup", new SignupAction());
+    	actions.put("session", new SessionAction());
+    	actions.put("list", new ListAction()); 
     }
     
 	/**

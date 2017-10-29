@@ -4,11 +4,9 @@
 package org.dimigo.service;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 /**
@@ -25,10 +23,15 @@ import javax.sql.DataSource;
  */
 public abstract class AbstractService {
 
-    public Connection getConnection() throws SQLException, NamingException {
-    	Context context = new InitialContext();
-    	DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/mysql");
-    	return dataSource.getConnection();	
+    public Connection getConnection() throws Exception {
+    	try {
+	    	Context context = new InitialContext();
+	    	DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/mysql");
+	    	return dataSource.getConnection();	
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    		throw new Exception("데이터베이스 연결에 실패하였습니다.");
+    	}
     }
     
 }

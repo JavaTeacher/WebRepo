@@ -9,8 +9,8 @@
 <body>
 <!-- session 실습 시 chrome에서 실행한 후 IE에서 실행해보기 -->
 <form action="/WebClass/scope" method="post">
-<input type="text" name="id" value="testid" />
-<input type="hidden" name="pwd" value="testpwd" />
+<input type="text" name="id" />
+<input type="hidden" name="pwd" value="test"/>
 <button type="submit">전송</button>
 </form>
 <h1>request : <%= request.getAttribute("key") %></h1>
@@ -22,5 +22,15 @@
 <form action="/WebClass/jsp/scope2.jsp" method="post">
 <button type="submit">전송</button>
 </form>
+
+<script>
+<% 
+	String error = (String) request.getAttribute("error");
+	if(error != null) { 
+%>
+		alert('<%= error %>');
+<% } %>
+</script>
+
 </body>
 </html>

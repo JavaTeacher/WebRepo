@@ -45,9 +45,9 @@ function menu_out(e) {
   	<%@ include file="menu.jsp" %>
   	
     <c:if test="${empty user}">
-    	<a class="text-bold text-white" style="text-decoration: none" href="${contextPath}/openlogin.do">Sign in</a>
+    	<a class="text-bold text-white" style="text-decoration: none" href="${contextPath}/jsp/login.jsp">Sign in</a>
     	<span class="text-bold text-white">&nbsp; or &nbsp;</span>
-    	<a class="text-bold text-white" style="text-decoration: none" href="${contextPath}/opensignup.do">Sign up</a>
+    	<a class="text-bold text-white" style="text-decoration: none" href="${contextPath}/jsp/signup.jsp">Sign up</a>
     </c:if>
     <c:if test="${!empty user}">
 	    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">

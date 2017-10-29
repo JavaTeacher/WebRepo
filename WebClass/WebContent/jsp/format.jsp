@@ -10,7 +10,7 @@
 </head>
 <body>
 <% request.setAttribute("price", 1000000); %>
-<c:set var="price2" value="1000000" />
+<c:set var="price" value="2000000" />
 ${price}<br/>
 <fmt:formatNumber value="${price}" type="number"/><br/>
 <fmt:formatNumber value="${price}" type="percent" /><br/>

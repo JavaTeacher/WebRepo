@@ -45,9 +45,6 @@ public class ScopeServlet extends HttpServlet {
 			if(id == null || id.equals(""))
 				throw new Exception("아이디는 필수항목입니다.");
 			
-			if(pwd == null || pwd.equals(""))
-				throw new Exception("비밀번호는 필수항목입니다.");
-			
 			// request scope
 			request.setAttribute("key", "rValue");
 			// session scope
@@ -59,8 +56,9 @@ public class ScopeServlet extends HttpServlet {
 		    rd.forward(request, response);
 		    
 		} catch(Exception e) {
-			request.setAttribute("error", e);
-			RequestDispatcher rd = request.getRequestDispatcher("jsp/error.jsp");
+			//request.setAttribute("msg", "error");
+			request.setAttribute("error", e.getMessage());
+			RequestDispatcher rd = request.getRequestDispatcher("jsp/scope.jsp");
 		    rd.forward(request, response);
 		}
 	}

@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.dimigo.service.SignupService;
+import org.dimigo.service.UserService;
 import org.dimigo.util.CommonUtil;
 import org.dimigo.vo.UserVO;
 
@@ -63,7 +63,7 @@ public class SignupAction implements IAction {
 			validate(user);
 			
 			// 비지니스 로직 처리를 위한 Service 호출
-			SignupService service = new SignupService();
+			UserService service = new UserService();
 			service.signup(user);
 			
 		    obj.addProperty("msg", "success");

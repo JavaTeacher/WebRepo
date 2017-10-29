@@ -12,7 +12,7 @@
 <%
 	//UserVO vo = (UserVO) session.getAttribute("user");
 %>
-<h1>id : ${ user.id }</h1>
+<h1>id : ${ sessionScope.user.id }</h1>
 <h1>name : ${ user.name }</h1>
 <h1>nickName : ${ user.nickName }</h1>
 </body>
